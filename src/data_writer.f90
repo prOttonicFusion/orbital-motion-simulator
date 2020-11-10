@@ -33,7 +33,7 @@ contains
     end subroutine write_data
 
     ! Print mass, distance to sun etc. to screen
-    subroutine printdata(p, v, t, mass, Nobj, niter, nwrite, maxtime, names)
+    subroutine print_data(p, v, t, mass, Nobj, niter, nwrite, maxtime, names)
         implicit none
         real(rk), intent(in) :: p(:, :), v(:, :), t, mass(:), maxtime
         integer(ik), intent(in) :: Nobj, niter, nwrite
@@ -55,10 +55,10 @@ contains
             print '(I2,x,ES10.3,3(F9.3),3x,3(ES10.3,2x),A)', i, mass(i), p(i, 1:3), v(i, 1:3), names(i)
         end do
         print *
-    end subroutine printdata
+    end subroutine print_data
 
     ! Print inital parameters and data to screen
-    subroutine printinitdata(pos, v, t, dt, maxtime, saveint, mass, Nobj, names)
+    subroutine print_init_data(pos, v, t, dt, maxtime, saveint, mass, Nobj, names)
         implicit none
         real(rk), intent(in) :: pos(:, :), v(:, :), t, dt, maxtime, mass(:)
         integer(ik), intent(in) :: Nobj, saveint
@@ -74,6 +74,6 @@ contains
             print '(I2,x,ES10.3,3(F9.3),3x,3(ES10.3,2x),A)', i, mass(i), pos(i, 1:3), v(i, 1:3), names(i)
         end do
         print *
-    end subroutine printinitdata
+    end subroutine print_init_data
 
 end module data_writer

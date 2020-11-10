@@ -26,7 +26,7 @@ program main
     v = obj_data(1:Nobj, 5:7)        ! velocities --||--
 
     ! Print initial data to screen
-    call printinitdata(pos, v, t, dt, maxtime, saveint, mass, Nobj, names)
+    call print_init_data(pos, v, t, dt, maxtime, saveint, mass, Nobj, names)
 
     ! Initiate simulation
     N = nobj
@@ -53,7 +53,7 @@ program main
 
         ! Print data to screen (every printint:th iteration)
         if (mod(niter, printint) == 0) then
-            call printdata(pos, v, t, mass, N, niter, nwrite, maxtime, names)
+            call print_data(pos, v, t, mass, N, niter, nwrite, maxtime, names)
         end if
 
     end do main_loop
@@ -63,6 +63,6 @@ program main
     print '(/50(''='')/,12x,A,/50(''=''))', '[ SIMULATION COMPLETED! ]'
     print '(/A,E15.5,A)', 'Total simulation time: ', t, ' s'
     print '(A,F10.5,A)', 'Elapsed CPU time: ', t2 - t1, ' s'
-    call printdata(pos, v, t, mass, N, niter, nwrite, maxtime, names)
+    call print_data(pos, v, t, mass, N, niter, nwrite, maxtime, names)
 
 end program main
