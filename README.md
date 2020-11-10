@@ -13,11 +13,11 @@ make
 ### Manually:
 1. Compile modules:
 ```
-gfortran -c src/constants.f90 src/input_parser.f90 src/potential.f90 src/write_data.f90 src/main.f90
+gfortran -c src/constants.f90 src/input_parser.f90 src/potential.f90 src/data_writer.f90 src/main.f90
 ```
 2. Link produced binaries:
 ```
-gfortran constants.o input_parser.o potential.o write_data.o main.o -o planetSim
+gfortran constants.o input_parser.o potential.o data_writer.o main.o -o planetSim
 ```
 3. (Optional) Clean main folder by running: `rm -f *.o *.mod`
 

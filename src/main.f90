@@ -4,7 +4,7 @@ program main
     use constants
     use input_parser
     use potential
-    use write_data
+    use data_writer
     implicit none
     integer(ik) :: frame = 0, i, j, niter = 0, nwrite = 0, printint, saveint, N
     real(rk) :: t = 0, dt, maxtime, v_new(3), pos_new(3), pos_old(3), t1, t2
@@ -47,7 +47,7 @@ program main
         ! Write data to file (every saveint:th iteration)
         if (mod(niter, saveint) == 0) then
             frame = frame + 1
-            call writedata(pos, v, t, mass, N, frame)
+            call write_data(pos, v, t, mass, N, frame)
             nwrite = nwrite + 1
         end if
 

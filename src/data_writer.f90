@@ -1,13 +1,13 @@
 ! Subroutines for writing data to output files & screen
 
-module write_data
+module data_writer
     use constants
     use potential
     use error_handler
 
 contains
 
-    subroutine writedata(pos, v, t, mass, Nobj, Frame)
+    subroutine write_data(pos, v, t, mass, Nobj, Frame)
         implicit none
         real(rk), intent(in) :: pos(:, :), v(:, :), t, mass(:)
         integer(ik), intent(in) :: Nobj, Frame
@@ -30,7 +30,7 @@ contains
             write (3, '(I3,x,3(ES15.6,x))') i, pos(i, 1:3)
         end do
         close (3)
-    end subroutine writedata
+    end subroutine write_data
 
     ! Print mass, distance to sun etc. to screen
     subroutine printdata(p, v, t, mass, Nobj, niter, nwrite, maxtime, names)
@@ -76,4 +76,4 @@ contains
         print *
     end subroutine printinitdata
 
-end module write_data
+end module data_writer
