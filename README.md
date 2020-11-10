@@ -40,7 +40,7 @@ mass2 x2 y2 z2 vx2 vy2 vz2 [Name2]
 ```
 where the masses are given in solar masses, the coordinates are given in astronomical units and the velocities in AU/s. The names are optional and can be up to 50 characters in length.
 
-The sample input, input_nasa.dat has the actual positions of the planets as of December 4th 2017, according to data from NASA.
+The sample input, `input_nasa.dat` has the actual positions of the planets as of December 4th 2017, according to data from NASA.
 
 
 ### Output
@@ -62,6 +62,8 @@ Frame number; <number>  Time: <time>
 <ID>  <x> <y>  <z>
 ...
 ```
+
+This repo contains sample outputs (`output_inner_planets.dat` and `output_inner_planets.movie`) for the four innermost planets, simulated for roughly one orbital period of Mars.
 
 ### Visualization
 The produced movie file can be easily visulized as an animation using e.g. [Ovito](https://www.ovito.org/) and setting particle size of ~0.1. The trajectory utility of Ovito can also be used for visualizing orbits.
