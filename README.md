@@ -29,15 +29,15 @@ To run the simulator, copy the executable `planetSim` to `run/` and execute it u
 ./planetSim
 ```
 ### Input
-The input file `input.dat` contains the initial parameters in the following format:
+The input file should be named `input.dat` and contain initial simulation parameters in the following format:
 ```
-Number_of_planets
-Length_of_timestep
-Length_of_simulation
+<Number_of_planets>
+<Length_of_timestep>
+<Length_of_simulation>
 Time_between_data_writes
-Time_between_data_to_screen
-mass1 x1 y1 z1 vx1 vy1 vz1 [Name1]
-mass2 x2 y2 z2 vx2 vy2 vz2 [Name2]
+<Time_between_data_to_screen>
+<mass1> <x1> <y1> <z1> <vx1> <vy1> <vz1> [Name1]
+<mass2> <x2> <y2> <z2> <vx2> <vy2> <vz2> [Name2]
 ...
 ```
 where the masses are given in solar masses, the coordinates are given in astronomical units and the velocities in AU/s. The names are optional and can be up to 50 characters in length.
