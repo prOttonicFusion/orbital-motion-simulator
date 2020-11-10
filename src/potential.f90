@@ -1,7 +1,10 @@
-! This module contains functions for planetary acceleration & total energy calculations
+! Functions for planetary acceleration & total energy calculations
+
 module potential
     use constants
+
 contains
+
     ! Calculate the acceleration due to gravity on all objects
     function acc(pos, mass, Nobj) result(a)
         implicit none

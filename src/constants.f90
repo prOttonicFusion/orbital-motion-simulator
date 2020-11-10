@@ -1,7 +1,8 @@
-! This module contains global variables & constants which can be used in
-! any other module or in the main file
+! This module contains global variables & constants
+
 module constants
     implicit none
+
     ! Natural & conversion constants
     real, parameter :: G = 3.963381e-14  ! AU^3/(M_sun*s^2); Gravit. const.
     real, parameter :: AU2KM = 149597871 ! Km/AU;

@@ -1,4 +1,5 @@
-! This is a module for reading input data & creating empty output files
+! Module for reading input data & creating output files
+
 module read_input
     use constants
     use error_report
@@ -9,6 +10,7 @@ module read_input
     character(len=maxlen), allocatable :: names(:)
 
 contains
+
     subroutine get_input(param, obj_data, names)
         real(rk), intent(out) :: param(:)
         real(rk), allocatable, intent(out) :: obj_data(:, :)
@@ -23,7 +25,7 @@ contains
             read (1, *) param(ii)
         end do
 
-        ! Stop if any parameter is 0 or timestep is larger tha total time
+        ! Stop if any parameter is 0 or timestep is larger the total time
         if (any(param == 0)) call errors(2_ik, 0_ik)
         if (param(2) > param(3)) call errors(3_ik, 0_ik)
 

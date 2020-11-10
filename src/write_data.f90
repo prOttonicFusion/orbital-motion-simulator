@@ -1,16 +1,19 @@
-! This module contains subroutines for writing data to output files & screen
+! Subroutines for writing data to output files & screen
+
 module write_data
     use constants
     use potential
     use error_report
+
 contains
+
     subroutine writedata(pos, v, t, mass, Nobj, Frame)
         implicit none
         real(rk), intent(in) :: pos(:, :), v(:, :), t, mass(:)
         integer(ik), intent(in) :: Nobj, Frame
         integer(ik) :: i, ios
 
-        ! write data to output file
+        ! Write data to output file
         open (unit=2, file=outfile, iostat=ios, status='old', position='append')
         if (ios /= 0) call errors(7_ik, ios)  ! stop if errors occur
         do i = 1, Nobj
@@ -18,7 +21,7 @@ contains
         end do
         close (2)
 
-        ! write data to movie file
+        ! Write data to movie file
         open (unit=3, file=moviefile, iostat=ios, status='old', position='append')
         if (ios /= 0) call errors(8_ik, ios) ! stop if errors occur
         write (3, '(I5)') Nobj
@@ -43,14 +46,15 @@ contains
         print '(I5,A,A)', nwrite, ' times written to ', outfile
         print '(/A,/50(''-''))', 'M_sols      Dist. to origin [AU]'
         do i = 1, Nobj
-     print '(ES10.3,ES15.5,4x,A)', mass(i), sqrt((p(i, 1) - p(1, 1))**2 + (p(i, 2) - p(1, 2))**2 + (p(i, 3) - p(1, 3))**2), names(i)
+            print '(ES10.3,ES15.5,4x,A)', &
+                mass(i), sqrt((p(i, 1) - p(1, 1))**2 + (p(i, 2) - p(1, 2))**2 + (p(i, 3) - p(1, 3))**2), names(i)
         end do
         print '(/8(A,3x))', 'ID', 'M_sols', ' x [AU]', 'y [AU]', 'z [AU]', 'v_x [AU/s]', 'v_y [AU/s]', 'v_z [AU/s]'
         print '(85(''-''))'
         do i = 1, Nobj
             print '(I2,x,ES10.3,3(F9.3),3x,3(ES10.3,2x),A)', i, mass(i), p(i, 1:3), v(i, 1:3), names(i)
         end do
-        print *,
+        print *
     end subroutine printdata
 
     ! Print inital parameters and data to screen
@@ -69,7 +73,7 @@ contains
         do i = 1, Nobj
             print '(I2,x,ES10.3,3(F9.3),3x,3(ES10.3,2x),A)', i, mass(i), pos(i, 1:3), v(i, 1:3), names(i)
         end do
-        print *,
+        print *
     end subroutine printinitdata
 
 end module write_data

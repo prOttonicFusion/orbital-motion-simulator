@@ -1,6 +1,8 @@
-! This is an error reporting module; it displays a message & kills the simulation
+! Error reporting module
+
 module error_report
     use constants
+    
 contains
 
     subroutine errors(err, ios)
