@@ -1,5 +1,7 @@
 # Planetary Motion Simulator
 
+A planetary motion simulator written in Fortran90
+
 ## Compilation:
 
 ### Using the provided Makefile:
