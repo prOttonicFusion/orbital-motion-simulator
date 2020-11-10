@@ -25,4 +25,4 @@ main.o: src/main.f90
 	${F90} -c src/main.f90
 
 clean:
-	rm -f *.o *.mod
+	rm -f *.o *.mod src/*.mod
