@@ -3,7 +3,7 @@
 F90=gfortran   # Compiler
 
 all: constants.o error_report.o read_input.o potential.o write_data.o main.o
-	${F90} -o constants.o error_report.o read_input.o potential.o write_data.o main.o -o planetsim
+	${F90} -o constants.o error_report.o read_input.o potential.o write_data.o main.o -o planetSim
 	@rm -f *.o *.mod
 
 constants.o: src/constants.f90
