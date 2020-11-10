@@ -2,7 +2,7 @@
 
 module read_input
     use constants
-    use error_report
+    use error_handler
     implicit none
     real(rk) :: param(5) = 0
     real(rk), allocatable :: obj_data(:, :)
@@ -18,7 +18,7 @@ contains
 
         ! Open input file (On error: show message & stop)
         open (unit=1, file=infile, iostat=ios, status='old')
-        if (ios /= 0) call errors(1_ik, ios)
+        if (ios /= 0) call throw('INPUT_FILE_ERR', ios)
 
         ! Read simulation parameters (five first rows of input file)
         do ii = 1, 5
@@ -26,8 +26,8 @@ contains
         end do
 
         ! Stop if any parameter is 0 or timestep is larger the total time
-        if (any(param == 0)) call errors(2_ik, 0_ik)
-        if (param(2) > param(3)) call errors(3_ik, 0_ik)
+        if (any(param == 0)) call throw('INPUT_PARAM_ERR', 0_ik)
+        if (param(2) > param(3)) call throw('TOO_LARGE_TIMESTEP_ERR', 0_ik)
 
         Nobj = param(1)
         allocate (obj_data(Nobj, Ncols), names(Nobj))
@@ -35,18 +35,18 @@ contains
         ! Read object coordinates etc.
         do ii = 1, Nobj
             read (1, *, iostat=ios) (obj_data(ii, jj), jj=1, Ncols), names(ii)
-            if (ios < 0) call errors(4_ik, 0_ik)    ! stop if Nobj > number of inital coord.
+            if (ios < 0) call throw('TOO_FEW_COORDS_ERR', 0_ik)    ! stop if Nobj > number of inital coord.
             names(ii) = trim(names(ii))
         end do
         close (1)
 
         ! Create ouput files
         open (unit=2, file=outfile, iostat=ios, status='replace')
-        if (ios /= 0) call errors(5_ik, ios)
+        if (ios /= 0) call throw('OUTPUT_FILE_ERR', ios)
         close (2)
 
         open (unit=3, file=moviefile, iostat=ios, status='replace')
-        if (ios /= 0) call errors(6_ik, ios)
+        if (ios /= 0) call throw('MOVIE_FILE_ERR', ios)
         close (3)
 
     end subroutine get_input

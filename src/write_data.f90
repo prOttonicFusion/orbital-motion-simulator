@@ -3,7 +3,7 @@
 module write_data
     use constants
     use potential
-    use error_report
+    use error_handler
 
 contains
 
@@ -15,7 +15,7 @@ contains
 
         ! Write data to output file
         open (unit=2, file=outfile, iostat=ios, status='old', position='append')
-        if (ios /= 0) call errors(7_ik, ios)  ! stop if errors occur
+        if (ios /= 0) call throw('OUTPUT_READ_ERR', ios)  ! stop if errors occur
         do i = 1, Nobj
             write (2, '(I3,4(ES15.6))') i, pos(i, 1:3), t
         end do
@@ -23,7 +23,7 @@ contains
 
         ! Write data to movie file
         open (unit=3, file=moviefile, iostat=ios, status='old', position='append')
-        if (ios /= 0) call errors(8_ik, ios) ! stop if errors occur
+        if (ios /= 0) call throw('MOVIE_READ_ERR', ios) ! stop if errors occur
         write (3, '(I5)') Nobj
         write (3, '(A,I7,A,ES15.6,A)') 'Frame number:', Frame, '; Time: ', t, ' s'
         do i = 1, Nobj
