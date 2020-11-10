@@ -1,6 +1,6 @@
 ! Module for reading input data & creating output files
 
-module read_input
+module input_parser
     use constants
     use error_handler
     implicit none
@@ -50,4 +50,4 @@ contains
         close (3)
 
     end subroutine get_input
-end module read_input
+end module input_parser

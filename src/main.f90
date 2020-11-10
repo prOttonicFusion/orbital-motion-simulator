@@ -2,7 +2,7 @@
 
 program main
     use constants
-    use read_input
+    use input_parser
     use potential
     use write_data
     implicit none
