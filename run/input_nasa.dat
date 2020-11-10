@@ -1,6 +1,6 @@
-9	               # Number of objects to simulate
+9	           # Number of objects to simulate
 10		       # Time step, [s]
-7.6e6		       # Total simulation time, [s]
+7.6e6		   # Total simulation time, [s]
 3e3		       # Data saving interval, [iter.]
 6e3		       # Data-to-screen interval, [iter.]
 0.100E+01   0.19633304E-2   0.59870924E-2  -0.12408704E-3  -0.6509962E-10   0.6030457E-10   0.15609623E-11   Sun
@@ -12,4 +12,4 @@
 0.286E-03  -0.99731251E-1  -0.10056111E+2   0.17881472E+0   0.61016888E-7  -0.85548367E-9  -0.24098824E-8    Saturn
 0.437E-04   0.17773973E+2   0.89699528E+1  -0.19694998E+0  -0.20843253E-7   0.38517917E-7   0.41286262E-9    Uranus
 0.515E-04   0.28656866E+2  -0.86763431E+1  -0.48175394E+0   0.10283959E-7   0.34984712E-7  -0.96004312E-9    Neptune
-3.69e-8     2.71e-3         0               0               0               6.485e-9        0      The Moon
+3.69e-8     2.71e-3         0               0               0               6.485e-9        0                The Moon
