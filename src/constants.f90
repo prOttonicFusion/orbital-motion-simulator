@@ -16,8 +16,8 @@ module constants
     integer, parameter :: maxlen = 50   ! max. length of object names
 
     ! Input & output file names & paths
-    character(*), parameter :: infile = "run/input.dat"
-    character(*), parameter :: outfile = "run/output.dat"
-    character(*), parameter :: moviefile = "run/output.movie"
+    character(*), parameter :: infile = "input.dat"
+    character(*), parameter :: outfile = "output.dat"
+    character(*), parameter :: moviefile = "output.movie"
 
 end module constants
