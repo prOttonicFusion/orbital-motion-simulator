@@ -69,3 +69,8 @@ This repo contains sample outputs (`output_inner_planets.dat` and `output_inner_
 
 ### Visualization
 The produced movie file can be easily visulized as an animation using e.g. [Ovito](https://www.ovito.org/) and setting particle size of ~0.1. The trajectory utility of Ovito can also be used for visualizing orbits.
+
+The `*.dat` files can be visualized using the attached Python script, used as 
+```
+python3 plot_orbits.py <output-file>
+```
