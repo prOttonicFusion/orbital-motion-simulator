@@ -1,6 +1,6 @@
 # Planetary Motion Simulator
 
-A planetary motion simulator written in Fortran90
+A planetary motion simulator written in Fortran
 
 ## Compilation:
 
