@@ -1,6 +1,6 @@
 # Planetary Motion Simulator
 
-A planetary motion simulator written in Fortran
+A velocity Verlet planetary motion simulator written in Fortran
 
 ## Compilation:
 
