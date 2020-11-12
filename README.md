@@ -1,6 +1,6 @@
-# Planetary Motion Simulator
+# Orbital Motion Simulator
 
-A velocity Verlet planetary motion simulator written in Fortran
+A velocity Verlet algorithm integrator for simulating the motion of cellestial objects
 
 ## Compilation:
 
