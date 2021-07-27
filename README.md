@@ -2,7 +2,6 @@
 
 A velocity Verlet algorithm integrator for simulating the motion of celestial objects
 
-
 | <img src="./assets/render.png" width="400"/> | <img src="./assets/xy-chart.png" width="400"/> |
 |:--:|:--:|
 
@@ -74,7 +73,11 @@ This repo contains sample outputs (`output_inner_planets.dat` and `output_inner_
 ### Visualization
 The produced movie file can be easily visulized as an animation using e.g. [Ovito](https://www.ovito.org/) and reading the movie file columns as particle type and the three spatial coordinates, respectively. The trajectory utility of Ovito can also be used for visualizing orbits.
 
-The `*.dat` files can be visualized using the attached Python script:  
+The `*.dat` files can be visualized using the attached Python script. Make sure to first install the dependencies using e.g.
 ```
-python3 plot_orbits.py <output-file>
+pip3 install -r utils/requirements.txt
+```
+after which plotting works as
+```
+python3 utils/plot_orbits.py <output-file>
 ```
