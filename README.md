@@ -1,6 +1,10 @@
 # Orbital Motion Simulator
 
-A velocity Verlet algorithm integrator for simulating the motion of cellestial objects
+A velocity Verlet algorithm integrator for simulating the motion of celestial objects
+
+
+| <img src="./assets/render.png" width="400"/> | <img src="./assets/xy-chart.png" width="400"/> |
+|:--:|:--:|
 
 ## Compilation:
 
@@ -68,9 +72,9 @@ Frame number; <number>  Time: <time>
 This repo contains sample outputs (`output_inner_planets.dat` and `output_inner_planets.movie`) for the four innermost planets, simulated for roughly one orbital period of Mars.
 
 ### Visualization
-The produced movie file can be easily visulized as an animation using e.g. [Ovito](https://www.ovito.org/) and setting particle size of ~0.1. The trajectory utility of Ovito can also be used for visualizing orbits.
+The produced movie file can be easily visulized as an animation using e.g. [Ovito](https://www.ovito.org/) and reading the movie file columns as particle type and the three spatial coordinates, respectively. The trajectory utility of Ovito can also be used for visualizing orbits.
 
-The `*.dat` files can be visualized using the attached Python script, used as 
+The `*.dat` files can be visualized using the attached Python script:  
 ```
 python3 plot_orbits.py <output-file>
 ```
